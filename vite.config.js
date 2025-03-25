@@ -6,13 +6,16 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevTools(),
-  ],
+  plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
+  },
+  server: {
+    host: '0.0.0.0', // Разрешаем подключение извне
+    port: 5173, // Порт (можно поменять)
+    strictPort: true,
+    allowedHosts: ['.ngrok-free.app'], // Разрешаем все поддомены ngrok
   },
 })

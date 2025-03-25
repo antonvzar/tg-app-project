@@ -1,18 +1,6 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>
-
 <template>
   <div class="home">
     <div class="cards-1">
-      <RouterLink to="/" class="card">
-        <div class="card-icon">
-          <img src="@/components/icons/homeicon2-Photoroom-1.svg" alt="Главная" />
-        </div>
-        <h2>ГЛАВНАЯ</h2>
-        <p>Съешь еще этих мягких французских булок, да выпей чаю.</p>
-      </RouterLink>
-
       <RouterLink to="/research" class="card">
         <div class="card-icon">
           <img src="@/components/icons/homeicon2-Photoroom-research.svg" alt="Исследования" />
@@ -20,37 +8,47 @@ import { RouterLink } from 'vue-router'
         <h2>ИССЛЕДОВАНИЯ</h2>
         <p>Съешь еще этих мягких французских булок, да выпей чаю.</p>
       </RouterLink>
+
+      <RouterLink to="/ph-meter" class="card">
+        <div class="card-icon">
+          <img src="@/components/icons/homeicon2-Photoroom-phmeter.svg" alt="PH-метр" />
+        </div>
+        <h2>PH-МЕТР</h2>
+        <p>Съешь еще этих мягких французских булок, да выпей чаю.</p>
+      </RouterLink>
     </div>
 
     <h1 class="title">КРИОПРОТЕКТОРЫ</h1>
 
     <div class="cards-2">
-      <RouterLink to="/ph-meter" class="card">
+      <RouterLink to="/article-analysis" class="card">
         <div class="card-icon">
-          <img src="@/components/icons/homeicon2-Photoroom-phmeter.svg" alt="ph-метр" />
+          <img src="@/components/icons/homeicon2-Photoroom-analysis.svg" alt="Анализ статей" />
         </div>
-        <h2>PH-МЕТР</h2>
+        <h2>АНАЛИЗ СТАТЕЙ</h2>
         <p>Съешь еще этих мягких французских булок, да выпей чаю.</p>
       </RouterLink>
 
-      <RouterLink to="/auto-analysis" class="card">
+      <RouterLink to="/contacts" class="card">
         <div class="card-icon">
-          <img src="@/components/icons/homeicon2-Photoroom-analysis.svg" alt="Автоанализ" />
+          <img src="@/components/icons/homeicon2-Photoroom-1.svg" alt="Контакты" />
         </div>
-        <h2>АВТОАНАЛИЗ</h2>
+        <h2>КОНТАКТЫ</h2>
         <p>Съешь еще этих мягких французских булок, да выпей чаю.</p>
       </RouterLink>
     </div>
   </div>
 </template>
 
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <style scoped>
 .home {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .title {
@@ -67,7 +65,14 @@ import { RouterLink } from 'vue-router'
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   width: 100%;
-  min-height: 0;
+}
+
+.cards-1 {
+  flex: 1;
+}
+
+.cards-2 {
+  flex: 1;
 }
 
 .card {
@@ -83,6 +88,8 @@ import { RouterLink } from 'vue-router'
   display: flex;
   flex-direction: column;
   height: 100%;
+  align-items: center;
+  text-align: center;
 }
 
 .card:hover {
@@ -122,23 +129,6 @@ import { RouterLink } from 'vue-router'
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-}
-
-/* Icon gradients */
-.main-icon {
-  background: linear-gradient(45deg, var(--persian-blue), var(--royal-blue));
-}
-
-.research-icon {
-  background: linear-gradient(45deg, var(--royal-blue), var(--deep-purple));
-}
-
-.ph-icon {
-  background: linear-gradient(45deg, var(--deep-purple), var(--frost-blue));
-}
-
-.analysis-icon {
-  background: linear-gradient(45deg, var(--frost-blue), var(--deep-sky));
 }
 
 @media screen and (min-width: 390px) {

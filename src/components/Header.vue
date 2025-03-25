@@ -1,14 +1,3 @@
-<script setup>
-import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
-
-const isRussian = ref(true)
-
-const toggleLanguage = () => {
-  isRussian.value = !isRussian.value
-}
-</script>
-
 <template>
   <header class="header">
     <RouterLink to="/" class="logo">
@@ -33,16 +22,31 @@ const toggleLanguage = () => {
   </header>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+
+const isRussian = ref(true)
+
+const toggleLanguage = () => {
+  isRussian.value = !isRussian.value
+}
+</script>
+
 <style scoped>
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: var(--header-height);
-  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 16px;
   background: rgba(90, 132, 166, 0.38);
   backdrop-filter: blur(90.51px);
-  flex-shrink: 0;
+  z-index: 10;
 }
 
 .logo {
@@ -85,9 +89,9 @@ const toggleLanguage = () => {
 }
 
 @media screen and (min-width: 390px) {
-  .header {
+  /* .header {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-  }
+  } */
 }
 </style>

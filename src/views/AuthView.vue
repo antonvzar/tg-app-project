@@ -1,21 +1,3 @@
-<script setup>
-import { ref } from 'vue'
-
-const isLogin = ref(true)
-const email = ref('')
-const password = ref('')
-const name = ref('')
-
-const toggleForm = () => {
-  isLogin.value = !isLogin.value
-}
-
-const handleSubmit = () => {
-  // Implement authentication logic here
-  console.log('Form submitted')
-}
-</script>
-
 <template>
   <div class="auth">
     <h1>{{ isLogin ? 'Вход' : 'Регистрация' }}</h1>
@@ -48,6 +30,24 @@ const handleSubmit = () => {
     </form>
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+const isLogin = ref(true)
+const email = ref('')
+const password = ref('')
+const name = ref('')
+
+const toggleForm = () => {
+  isLogin.value = !isLogin.value
+}
+
+const handleSubmit = () => {
+  // Implement authentication logic here
+  console.log('Form submitted')
+}
+</script>
 
 <style scoped>
 .auth {
